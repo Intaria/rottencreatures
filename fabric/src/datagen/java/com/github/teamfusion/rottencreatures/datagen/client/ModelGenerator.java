@@ -24,25 +24,14 @@ public final class ModelGenerator extends FabricModelProvider {
     }
 
     @Override
-    public void generateBlockStateModels(BlockModelGenerators gen) {
-        gen.createTrivialBlock(RCBlocks.TNT_BARREL.get(), TexturedModel.CUBE_TOP_BOTTOM);
-    }
-
-    @Override
     public void generateItemModels(ItemModelGenerators gen) {
         gen.generateFlatItem(RCItems.BURNED_SPAWN_EGG.get(), SPAWN_EGG);
         gen.generateFlatItem(RCItems.FROSTBITTEN_SPAWN_EGG.get(), SPAWN_EGG);
         gen.generateFlatItem(RCItems.SWAMPY_SPAWN_EGG.get(), SPAWN_EGG);
-        gen.generateFlatItem(RCItems.UNDEAD_MINER_SPAWN_EGG.get(), SPAWN_EGG);
         gen.generateFlatItem(RCItems.MUMMY_SPAWN_EGG.get(), SPAWN_EGG);
         gen.generateFlatItem(RCItems.GLACIAL_HUNTER_SPAWN_EGG.get(), SPAWN_EGG);
         gen.generateFlatItem(RCItems.DEAD_BEARD_SPAWN_EGG.get(), SPAWN_EGG);
         gen.generateFlatItem(RCItems.IMMORTAL_SPAWN_EGG.get(), SPAWN_EGG);
-        gen.generateFlatItem(RCItems.MAGMA_ROTTEN_FLESH.get(), ModelTemplates.FLAT_ITEM);
-        gen.generateFlatItem(RCItems.FROZEN_ROTTEN_FLESH.get(), ModelTemplates.FLAT_ITEM);
-        gen.generateFlatItem(RCItems.CORRUPTED_WART.get(), ModelTemplates.FLAT_ITEM);
-        gen.generateFlatItem(RCItems.TREASURE_CHEST.get(), ModelTemplates.FLAT_ITEM);
-        gen.generateFlatItem(RCBlocks.TNT_BARREL.get().asItem(), create(RCBlocks.TNT_BARREL.get()));
     }
 
     private static ModelTemplate createItem(String key) {

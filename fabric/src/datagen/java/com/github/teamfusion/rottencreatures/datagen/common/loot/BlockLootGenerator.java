@@ -8,9 +8,4 @@ public final class BlockLootGenerator extends FabricBlockLootTableProvider {
     public BlockLootGenerator(FabricDataGenerator gen) {
         super(gen);
     }
-
-    @Override
-    protected void generateBlockLootTables() {
-        this.dropSelf(RCBlocks.TNT_BARREL.get());
-    }
 }

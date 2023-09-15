@@ -27,8 +27,6 @@ public class ConfigImpl {
         create(ConfigEntries.FROSTBITTEN_WEIGHT);
         create(ConfigEntries.GLACIAL_HUNTER_WEIGHT);
         create(ConfigEntries.SWAMPY_WEIGHT);
-        create(ConfigEntries.UNDEAD_MINER_WEIGHT);
-        create(ConfigEntries.UNDEAD_MINER_DEPTH);
         create(ConfigEntries.MUMMY_WEIGHT);
         create(ConfigEntries.DEAD_BEARD_WEIGHT);
         create(ConfigEntries.IMMORTAL_CHANCE);

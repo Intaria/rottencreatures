@@ -2,7 +2,6 @@ package com.github.teamfusion.rottencreatures.common.registries;
 
 import com.github.teamfusion.platform.CoreRegistry;
 import com.github.teamfusion.rottencreatures.RottenCreatures;
-import com.github.teamfusion.rottencreatures.common.blocks.TntBarrelBlock;
 import net.minecraft.core.Registry;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -17,8 +16,6 @@ import java.util.function.Supplier;
 
 public class RCBlocks {
     public static final CoreRegistry<Block> BLOCKS = CoreRegistry.create(Registry.BLOCK, RottenCreatures.MOD_ID);
-
-    public static final Supplier<Block> TNT_BARREL = create("tnt_barrel", () -> new TntBarrelBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(2.0F, 5.0F).sound(SoundType.WOOD)), RottenCreatures.TAB);
 
     private static <T extends Block> Supplier<T> create(String key, Supplier<T> block, CreativeModeTab tab) {
         return create(key, block, entry -> new BlockItem(entry.get(), new Item.Properties().tab(tab)));

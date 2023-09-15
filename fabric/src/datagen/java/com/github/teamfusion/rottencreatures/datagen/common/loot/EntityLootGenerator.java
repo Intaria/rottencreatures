@@ -2,7 +2,6 @@ package com.github.teamfusion.rottencreatures.datagen.common.loot;
 
 import com.github.teamfusion.rottencreatures.common.LootBuilder;
 import com.github.teamfusion.rottencreatures.common.entities.Burned;
-import com.github.teamfusion.rottencreatures.common.entities.UndeadMiner;
 import com.github.teamfusion.rottencreatures.common.registries.RCEntityTypes;
 import com.github.teamfusion.rottencreatures.common.registries.RCItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
@@ -31,9 +30,6 @@ public final class EntityLootGenerator extends SimpleFabricLootTableProvider {
     @Override
     public void accept(BiConsumer<ResourceLocation, LootTable.Builder> consumer) {
         this.add(RCEntityTypes.BURNED, consumer, LootTable.lootTable()
-                .withPool(LootBuilder.rolls(1)
-                        .add(LootBuilder.entry(RCItems.MAGMA_ROTTEN_FLESH.get()).apply(LootBuilder.count(0, 2)).apply(LootBuilder.looting(0, 1)))
-                )
                 .withPool(LootBuilder.rolls(0, 2)
                         .add(LootBuilder.entry(Items.MAGMA_BLOCK))
                         .add(LootBuilder.entry(Items.MAGMA_CREAM).when(LootBuilder.chance(0.25F)))
@@ -55,9 +51,6 @@ public final class EntityLootGenerator extends SimpleFabricLootTableProvider {
 
         this.add(RCEntityTypes.FROSTBITTEN, consumer, LootTable.lootTable()
                 .withPool(LootBuilder.rolls(1)
-                        .add(LootBuilder.entry(RCItems.FROZEN_ROTTEN_FLESH.get()).apply(LootBuilder.count(0, 2)).apply(LootBuilder.looting(0, 1)))
-                )
-                .withPool(LootBuilder.rolls(1)
                         .add(LootBuilder.entry(Items.IRON_INGOT))
                         .add(LootBuilder.entry(Items.CARROT))
                         .add(LootBuilder.entry(Items.POTATO))
@@ -78,65 +71,6 @@ public final class EntityLootGenerator extends SimpleFabricLootTableProvider {
                         .add(LootBuilder.entry(Items.POISONOUS_POTATO))
                         .when(LootBuilder.killedByPlayer())
                         .when(LootBuilder.chanceWithLooting(0.5F, 0.01F))
-                )
-        );
-
-        this.add(UndeadMiner.DIAMOND_LOOT, consumer, LootTable.lootTable()
-                .withPool(LootBuilder.rolls(0, 3)
-                        .add(LootBuilder.entry(Items.ROTTEN_FLESH).apply(LootBuilder.count(0, 2)))
-                        .add(LootBuilder.entry(Items.COBBLESTONE).apply(LootBuilder.count(0, 2)))
-                        .apply(LootBuilder.looting(0, 1))
-                )
-                .withPool(LootBuilder.rolls(1, 2)
-                        .add(LootBuilder.entry(Items.RAW_GOLD).apply(LootBuilder.count(1, 5)))
-                        .add(LootBuilder.entry(Items.DIAMOND).apply(LootBuilder.count(1)))
-                        .when(LootBuilder.killedByPlayer())
-                )
-                .withPool(LootBuilder.rolls(1, 2)
-                        .add(LootBuilder.entry(Items.COAL).apply(LootBuilder.count(0, 2)))
-                        .add(LootBuilder.entry(Items.RAW_IRON).apply(LootBuilder.count(0, 2)))
-                        .when(LootBuilder.killedByPlayer())
-                )
-        );
-
-        this.add(UndeadMiner.IRON_LOOT, consumer, LootTable.lootTable()
-                .withPool(LootBuilder.rolls(0, 3)
-                        .add(LootBuilder.entry(Items.ROTTEN_FLESH).apply(LootBuilder.count(0, 2)))
-                        .add(LootBuilder.entry(Items.COBBLESTONE).apply(LootBuilder.count(0, 2)))
-                        .add(LootBuilder.entry(Items.COAL).apply(LootBuilder.count(0, 2)).when(LootBuilder.killedByPlayer()))
-                        .apply(LootBuilder.looting(0, 1))
-                )
-                .withPool(LootBuilder.rolls(1, 2)
-                        .add(LootBuilder.entry(Items.RAW_IRON))
-                        .add(LootBuilder.entry(Items.RAW_GOLD))
-                        .when(LootBuilder.killedByPlayer())
-                )
-        );
-
-        this.add(UndeadMiner.STONE_LOOT, consumer, LootTable.lootTable()
-                .withPool(LootBuilder.rolls(0, 2)
-                        .add(LootBuilder.entry(Items.ROTTEN_FLESH).apply(LootBuilder.count(0, 2)))
-                        .add(LootBuilder.entry(Items.COBBLESTONE).apply(LootBuilder.count(0, 2)))
-                        .apply(LootBuilder.looting(0, 1))
-                )
-                .withPool(LootBuilder.rolls(1)
-                        .add(LootBuilder.entry(Items.COAL))
-                        .add(LootBuilder.entry(Items.RAW_IRON))
-                        .when(LootBuilder.killedByPlayer())
-                )
-        );
-
-        this.add(UndeadMiner.GOLD_LOOT, consumer, LootTable.lootTable()
-                .withPool(LootBuilder.rolls(0, 2)
-                        .add(LootBuilder.entry(Items.ROTTEN_FLESH).apply(LootBuilder.count(0, 2)))
-                        .add(LootBuilder.entry(Items.COBBLESTONE).apply(LootBuilder.count(0, 2)))
-                        .apply(LootBuilder.looting(0, 1))
-                )
-                .withPool(LootBuilder.rolls(1)
-                        .add(LootBuilder.entry(Items.RAW_GOLD))
-                        .add(LootBuilder.entry(Items.GOLD_INGOT))
-                        .apply(LootBuilder.count(0, 2))
-                        .when(LootBuilder.killedByPlayer())
                 )
         );
 
@@ -172,9 +106,6 @@ public final class EntityLootGenerator extends SimpleFabricLootTableProvider {
         this.add(RCEntityTypes.DEAD_BEARD, consumer, LootTable.lootTable()
                 .withPool(LootBuilder.rolls(1)
                         .add(LootBuilder.entry(Items.ROTTEN_FLESH).apply(LootBuilder.count(0, 1)).apply(LootBuilder.looting(0, 1)))
-                )
-                .withPool(LootBuilder.rolls(1)
-                        .add(LootBuilder.entry(RCItems.TREASURE_CHEST.get()).apply(LootBuilder.count(1))).when(LootBuilder.killedByPlayer())
                 )
                 .withPool(LootBuilder.rolls(1)
                         .add(LootBuilder.entry(Items.IRON_INGOT).apply(LootBuilder.count(1, 5)).when(LootBuilder.chance(0.9F)))
@@ -242,8 +173,6 @@ public final class EntityLootGenerator extends SimpleFabricLootTableProvider {
                         .when(LootBuilder.chanceWithLooting(0.025F, 0.01F))
                 )
         );
-
-        this.add(RCEntityTypes.TNT_BARREL, consumer, LootTable.lootTable());
     }
 
     private <T extends Entity> void add(Supplier<EntityType<T>> type, BiConsumer<ResourceLocation, LootTable.Builder> consumer, LootTable.Builder builder) {

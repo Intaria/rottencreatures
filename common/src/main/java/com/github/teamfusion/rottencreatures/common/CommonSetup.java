@@ -13,7 +13,6 @@ import com.github.teamfusion.rottencreatures.common.entities.Burned;
 import com.github.teamfusion.rottencreatures.common.entities.Frostbitten;
 import com.github.teamfusion.rottencreatures.common.entities.SkeletonLackey;
 import com.github.teamfusion.rottencreatures.common.entities.Swampy;
-import com.github.teamfusion.rottencreatures.common.entities.UndeadMiner;
 import com.github.teamfusion.rottencreatures.common.entities.Zap;
 import com.github.teamfusion.rottencreatures.common.entities.ZombieLackey;
 import com.github.teamfusion.rottencreatures.common.registries.RCEntityTypes;
@@ -28,7 +27,6 @@ public class CommonSetup {
         MobHandler.registerAttributes(RCEntityTypes.BURNED, Burned::createAttributes);
         MobHandler.registerAttributes(RCEntityTypes.FROSTBITTEN, Frostbitten::createAttributes);
         MobHandler.registerAttributes(RCEntityTypes.SWAMPY, Swampy::createAttributes);
-        MobHandler.registerAttributes(RCEntityTypes.UNDEAD_MINER, UndeadMiner::createAttributes);
         MobHandler.registerAttributes(RCEntityTypes.MUMMY, Mummy::createAttributes);
         MobHandler.registerAttributes(RCEntityTypes.GLACIAL_HUNTER, GlacialHunter::createAttributes);
         MobHandler.registerAttributes(RCEntityTypes.HUNTER_WOLF, Wolf::createAttributes);
@@ -39,13 +37,11 @@ public class CommonSetup {
         MobHandler.registerAttributes(RCEntityTypes.SKELETON_LACKEY, SkeletonLackey::createAttributes);
         MobHandler.registerAttributes(RCEntityTypes.IMMORTAL, Immortal::createAttributes);
         MobHandler.registerAttributes(RCEntityTypes.ZAP, Zap::createAttributes);
-        MobHandler.registerAttributes(RCEntityTypes.TREASURE_CHEST, Mob::createMobAttributes);
     }
 
     public static void postCommon() {
         WorldGeneration.setup();
         BiomeManager.setup();
-        ItemRegistry.registerFuel(RCItems.MAGMA_ROTTEN_FLESH.get(), 67);
         RCPotions.bootstrap();
     }
 }

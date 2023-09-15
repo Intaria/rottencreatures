@@ -9,7 +9,6 @@ import com.github.teamfusion.rottencreatures.common.entities.Frostbitten;
 import com.github.teamfusion.rottencreatures.common.entities.GlacialHunter;
 import com.github.teamfusion.rottencreatures.common.entities.Mummy;
 import com.github.teamfusion.rottencreatures.common.entities.Swampy;
-import com.github.teamfusion.rottencreatures.common.entities.UndeadMiner;
 import com.github.teamfusion.rottencreatures.common.registries.RCEntityTypes;
 import com.github.teamfusion.rottencreatures.data.RCBiomeTags;
 import com.github.teamfusion.rottencreatures.mixin.access.SpawnPlacementsAccessor;
@@ -23,7 +22,6 @@ public class WorldGeneration {
         SpawnPlacementsAccessor.callRegister(RCEntityTypes.BURNED.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Burned::checkBurnedSpawnRules);
         SpawnPlacementsAccessor.callRegister(RCEntityTypes.FROSTBITTEN.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Frostbitten::checkFrostbittenSpawnRules);
         SpawnPlacementsAccessor.callRegister(RCEntityTypes.SWAMPY.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Swampy::checkSwampySpawnRules);
-        SpawnPlacementsAccessor.callRegister(RCEntityTypes.UNDEAD_MINER.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, UndeadMiner::checkUndeadMinerSpawnRules);
         SpawnPlacementsAccessor.callRegister(RCEntityTypes.GLACIAL_HUNTER.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, GlacialHunter::checkGlacialHunterSpawnRules);
         SpawnPlacementsAccessor.callRegister(RCEntityTypes.MUMMY.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Mummy::checkMummySpawnRules);
         SpawnPlacementsAccessor.callRegister(RCEntityTypes.SCARAB.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Mob::checkMobSpawnRules);
@@ -48,10 +46,6 @@ public class WorldGeneration {
 
             if (in(biome, RCBiomeTags.SWAMPY)) {
                 writer.addSpawn(MobCategory.MONSTER, RCEntityTypes.SWAMPY.get(), ConfigEntries.SWAMPY_WEIGHT.value(), 4, 4);
-            }
-
-            if (in(biome, RCBiomeTags.UNDEAD_MINER)) {
-                writer.addSpawn(MobCategory.MONSTER, RCEntityTypes.UNDEAD_MINER.get(), ConfigEntries.UNDEAD_MINER_WEIGHT.value(), 1, 4);
             }
 
             if (in(biome, RCBiomeTags.MUMMY)) {

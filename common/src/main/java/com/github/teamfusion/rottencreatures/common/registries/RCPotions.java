@@ -24,8 +24,6 @@ public class RCPotions {
     }
 
     public static void bootstrap() {
-        PotionBrewingAccessor.callAddMix(Potions.WATER, RCItems.CORRUPTED_WART.get(), RCPotions.CORRUPTED.get());
-        PotionBrewingAccessor.callAddMix(RCPotions.CORRUPTED.get(), RCItems.FROZEN_ROTTEN_FLESH.get(), RCPotions.FREEZE.get());
         PotionBrewingAccessor.callAddMix(RCPotions.FREEZE.get(), Items.REDSTONE, RCPotions.LONG_FREEZE.get());
         PotionBrewingAccessor.callAddMix(RCPotions.FREEZE.get(), Items.GLOWSTONE_DUST, RCPotions.STRONG_FREEZE.get());
     }

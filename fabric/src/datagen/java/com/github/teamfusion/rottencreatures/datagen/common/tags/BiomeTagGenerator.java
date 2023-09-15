@@ -25,9 +25,6 @@ public class BiomeTagGenerator extends TagsProvider<Biome> {
         this.tag(RCBiomeTags.SWAMPY.whitelist()).addOptionalTag(BiomeTags.HAS_RUINED_PORTAL_SWAMP.location());
         this.tag(RCBiomeTags.SWAMPY.blacklist());
 
-        this.tag(RCBiomeTags.UNDEAD_MINER.whitelist()).addOptionalTag(BiomeTags.IS_OVERWORLD.location());
-        this.tag(RCBiomeTags.UNDEAD_MINER.blacklist()).add(Biomes.MUSHROOM_FIELDS, Biomes.DEEP_DARK);
-
         this.tag(RCBiomeTags.MUMMY.whitelist()).addOptionalTag(BiomeTags.HAS_DESERT_PYRAMID.location());
         this.tag(RCBiomeTags.MUMMY.blacklist());
         this.tag(RCBiomeTags.DEAD_BEARD.whitelist()).addOptionalTag(BiomeTags.HAS_SHIPWRECK_BEACHED.location());

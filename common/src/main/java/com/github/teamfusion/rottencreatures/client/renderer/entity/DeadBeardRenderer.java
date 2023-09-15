@@ -3,7 +3,6 @@ package com.github.teamfusion.rottencreatures.client.renderer.entity;
 import com.github.teamfusion.rottencreatures.RottenCreatures;
 import com.github.teamfusion.rottencreatures.client.model.DeadBeardModel;
 import com.github.teamfusion.rottencreatures.client.model.LayerBuilder;
-import com.github.teamfusion.rottencreatures.client.renderer.entity.layers.HeldTntBarrelLayer;
 import com.github.teamfusion.rottencreatures.common.entities.DeadBeard;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Vector3f;
@@ -16,7 +15,6 @@ public class DeadBeardRenderer<T extends DeadBeard> extends HumanoidMobRenderer<
 
     public DeadBeardRenderer(EntityRendererProvider.Context context) {
         super(context, new DeadBeardModel<>(context.bakeLayer(LAYER.getMain())), 1.0F);
-        this.addLayer(new HeldTntBarrelLayer<>(this));
     }
 
     @Override

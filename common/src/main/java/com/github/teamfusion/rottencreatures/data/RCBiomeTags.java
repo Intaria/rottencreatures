@@ -13,7 +13,6 @@ public class RCBiomeTags {
     public static final Spawner FROSTBITTEN = Spawner.of("frostbitten");
     public static final Spawner GLACIAL_HUNTER = Spawner.of("glacial_hunter");
     public static final Spawner SWAMPY = Spawner.of("swampy");
-    public static final Spawner UNDEAD_MINER = Spawner.of("undead_miner");
     public static final Spawner MUMMY = Spawner.of("mummy");
     public static final Spawner DEAD_BEARD = Spawner.of("dead_beard");
 

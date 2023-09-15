@@ -114,35 +114,6 @@ public class DeadBeard extends SpellcasterZombie {
     @Override
     protected void dropCustomDeathLoot(DamageSource source, int lootingMultiplier, boolean allowDrops) {
         super.dropCustomDeathLoot(source, lootingMultiplier, allowDrops);
-
-        if (allowDrops && this.isIgnited()) {
-            this.spawnAtLocation(new ItemStack(RCBlocks.TNT_BARREL.get()));
-        }
-    }
-
-    /**
-     * checks for the health of dead beard to see if it should ignite the TNT Barrel
-     */
-    @Override
-    public void tick() {
-        super.tick();
-
-        if (!this.isIgnited() && this.getHealth() <= 10.0D && !this.isDeadOrDying()) {
-            this.setIgnited(true);
-        }
-
-        if (this.isIgnited() && !this.isDeadOrDying()) {
-            if (!this.level.isClientSide && this.getFuse() == 100) {
-                if (!this.isSilent()) this.level.playSound(null, this.getX(), this.getY(), this.getZ(), SoundEvents.TNT_PRIMED, SoundSource.BLOCKS, 1.0F, 1.0F);
-            }
-
-            int cooldown = this.getFuse() - 1;
-            this.setFuse(cooldown);
-            if (cooldown <= 0) {
-                this.discard();
-                this.explode();
-            }
-        }
     }
 
     @Override

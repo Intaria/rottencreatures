@@ -11,7 +11,6 @@
     "access.MobEffectAccessor",
     "access.PotionBrewingAccessor",
     "access.SpawnPlacementsAccessor",
-    "common.ExplosionMixin",
     "common.LavaCauldronBlockMixin",
     "common.LayeredCauldronBlockMixin",
     "common.LivingEntityMixin",

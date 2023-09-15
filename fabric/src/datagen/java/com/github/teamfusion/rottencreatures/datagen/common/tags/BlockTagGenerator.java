@@ -9,9 +9,4 @@ public class BlockTagGenerator extends FabricTagProvider.BlockTagProvider {
     public BlockTagGenerator(FabricDataGenerator generator) {
         super(generator);
     }
-
-    @Override
-    protected void generateTags() {
-        this.tag(BlockTags.MINEABLE_WITH_AXE).add(RCBlocks.TNT_BARREL.get());
-    }
 }

@@ -29,13 +29,7 @@ public class ConfigImpl implements ConfigData {
         public int glacial_hunter_weight = ConfigEntries.GLACIAL_HUNTER_WEIGHT.value();
 
         @Comment("determines how often will Swampies spawn")
-        public int swampy_weight = ConfigEntries.SWAMPY_WEIGHT.value();
-
-        @Comment("determines how often will Undead Miners spawn")
-        public int undead_miner_weight = ConfigEntries.UNDEAD_MINER_WEIGHT.value();
-
-        @Comment("determines the max y height where Undead Miners can spawn")
-        public int undead_miner_depth = ConfigEntries.UNDEAD_MINER_DEPTH.value();
+        public int swampy_weight = ConfigEntries.SWAMPY_WEIGHT.value();;
 
         @Comment("determines how often will Mummies spawn")
         public int mummy_weight = ConfigEntries.MUMMY_WEIGHT.value();
